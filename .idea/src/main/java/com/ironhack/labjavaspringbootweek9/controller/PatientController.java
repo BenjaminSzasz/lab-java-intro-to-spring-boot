@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,8 +29,8 @@ public class PatientController {
     }
 
     @GetMapping("/patients/date-of-birth")
-    public List<Patient> getPatientByBirthDayRange(@RequestParam Date from, @RequestParam Date to) {
-        return patientService.getPatientByBirthDayRange(from, to);
+    public List<Patient> getPatientByBirthDayRange(@RequestParam LocalDate from, @RequestParam LocalDate to ) {
+        return patientService.getPatientByBirthDayRange(from,to);
     }
 
     @GetMapping("/patients/byDoctorDepartment")

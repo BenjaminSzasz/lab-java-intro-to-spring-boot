@@ -6,6 +6,7 @@ import com.ironhack.labjavaspringbootweek9.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -21,7 +22,7 @@ public class PatientService {
     public Optional<Patient> getPatientById(Long id) {
         return patientRepository.findById(id);
     }
-    public List<Patient> getPatientByBirthDayRange(Date from, Date to) {
+    public List<Patient> getPatientByBirthDayRange(LocalDate from, LocalDate to) {
         return patientRepository.findByDateOfBirthBetween(from,to);
     }
     public List<Patient> getPatientByDoctorsDepartment(String department) {
